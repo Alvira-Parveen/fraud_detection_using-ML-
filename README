@@ -1,172 +1,37 @@
-# 💳 Fraud Detection using Machine Learning
+# Fraud Detection using Machine Learning
 
-An **end-to-end machine learning project** for detecting **fraudulent financial transactions** from large-scale, highly imbalanced data.  
-The system emphasizes **model interpretability**, **robust evaluation**, and **actionable business insights** for real-world fraud prevention.
+## Overview
+This project builds a machine learning–based fraud detection system for financial transactions. The goal is to identify fraudulent transactions from highly imbalanced data while minimizing false negatives.
 
----
+## Dataset
+- Financial transaction dataset with over 6 million records
+- Features include transaction type, amount, account balances, and timestamps
+- Due to computational constraints, a representative subset of 1 million records was used
 
-## 📌 Problem Statement
+## Approach
+- Data cleaning and preprocessing
+- Handling class imbalance
+- Feature selection and multicollinearity analysis
+- Logistic Regression (baseline model)
+- Random Forest (performance-oriented model)
 
-Financial fraud poses significant risks to companies and customers.  
-Fraudulent transactions are **rare**, evolve over time, and often involve complex patterns such as:
+## Evaluation Metrics
+- Precision
+- Recall
+- F1-Score
+- ROC-AUC
+- Confusion Matrix
 
-- Rapid fund transfers  
-- Account draining  
-- Large abnormal transaction amounts  
+## Key Insights
+- Fraudulent transactions typically involve large amounts
+- Transfers followed by cash-outs are high-risk patterns
+- Sudden balance depletion is a strong fraud indicator
 
-Traditional rule-based systems struggle to adapt, resulting in:
-- ❌ Missed fraud cases (false negatives)  
-- ❌ Increased financial losses  
-- ❌ Poor customer experience  
+## Tools & Technologies
+Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
 
-**Goal:** Build a **data-driven fraud detection system** that accurately identifies fraudulent transactions while minimizing missed fraud cases.
-
----
-
-## 🚀 Project Overview
-
-This project implements a **machine learning–based fraud detection pipeline** using historical transaction data.
-
-### Workflow:
-- Data cleaning & preprocessing  
-- Handling severe class imbalance  
-- Feature selection & multicollinearity analysis  
-- Model training & evaluation  
-- Business insight extraction  
-
-Both **statistical rigor** and **business reasoning** are emphasized.
-
----
-
-## 🎯 Objectives
-
-- Detect fraud from highly imbalanced transaction data  
-- Build interpretable and performance-driven ML models  
-- Identify key behavioral fraud patterns  
-- Evaluate models using appropriate metrics (beyond accuracy)  
-- Propose actionable fraud prevention strategies  
-
----
-
-## 📊 Dataset
-
-- Simulated real-world financial transactions  
-- **6.3M+ records**, 30 days of activity  
-- Hourly time granularity  
-- Includes transaction type, amount, balances, and fraud labels  
-
-### ⚠️ Dataset Usage Note
-Due to hardware constraints, a **representative subset of 1M transactions** was used.  
-The approach is **fully scalable** to the complete dataset.
-
----
-
-## 🧹 Data Preprocessing
-
-Key steps performed:
-
-- ✅ Missing value analysis (no critical missing values)  
-- ✅ Outlier analysis (retained due to fraud relevance)  
-- ✅ Categorical encoding (`type`)  
-- ✅ Removed non-informative identifiers  
-- ✅ Prevented data leakage (`isFlaggedFraud` removed)  
-- ✅ Multicollinearity analysis on balance features  
-
----
-
-## 🤖 Models Implemented
-
-### 1️⃣ Logistic Regression
-- Baseline & interpretable model  
-- Class imbalance handled using `class_weight='balanced'`  
-
-### 2️⃣ Random Forest
-- Captures non-linear fraud patterns  
-- Robust to multicollinearity  
-- Provides feature importance for insights  
-
----
-
-## 📈 Model Evaluation
-
-Accuracy alone is misleading for fraud detection.
-
-### Metrics Used:
-- Precision  
-- Recall (critical for fraud detection)  
-- F1-Score  
-- ROC-AUC  
-- Confusion Matrix  
-
-These metrics provide a realistic assessment of performance.
-
----
-
-## 🔑 Key Fraud Indicators
-
-The most influential fraud predictors identified:
-
-- Large transaction amounts  
-- High-risk transaction types (TRANSFER, CASH_OUT)  
-- Sudden depletion of origin account balance  
-- Unusual increase in destination account balance  
-
-These patterns align strongly with real-world fraud behavior.
-
----
-
-## 🛡️ Business Insights & Prevention
-
-### Recommended Actions:
-- Real-time monitoring of high-value transactions  
-- Velocity checks for rapid balance depletion  
-- Step-up authentication for suspicious transfers  
-- Periodic model retraining to handle fraud drift  
-
----
-
-## 🛠️ Tech Stack
-
-- Python  
-- Pandas, NumPy  
-- Scikit-learn  
-- Matplotlib, Seaborn  
-- Jupyter Notebook  
-
----
-
-## 📁 Project Structure
-
-fraud-detection-ml/
-├── fraud_detection.ipynb
-├── README.md
-├── requirements.txt
-
-> 🚫 Raw dataset not included due to size constraints.
-
----
-
-## ▶️ How to Run
-pip install -r requirements.txt
-jupyter notebook
-
-Open fraud_detection.ipynb and run all cells sequentially.
-
----
-
-## 🔮 Future Enhancements
-
-- Gradient Boosting / XGBoost
-- Cost-sensitive learning
-- Real-time streaming integration
-- Automated alert threshold tuning
-
----
-
-## 📌 Conclusion
-
-This project demonstrates how machine learning can be applied to detect fraudulent financial transactions from large-scale, imbalanced data. 
-By combining strong preprocessing, interpretable models, and business insights, the system provides a solid foundation for real-world fraud prevention.
+## Business Impact
+The model insights can help financial institutions implement real-time fraud prevention strategies and reduce financial losses.
 
 ## 👩‍💻 Author
 
@@ -175,12 +40,4 @@ By combining strong preprocessing, interpretable models, and business insights, 
 🌐 [GitHub](https://github.com/Alvira-Parveen)
 
 
----
-
-## 🔥 EXTRA POLISH (Optional but recommended)
-
-### 1️⃣ Add badges at the top (makes it pop)
-
-![Python](https://img.shields.io/badge/Python-3.8+-blue)
-![ML](https://img.shields.io/badge/Machine%20Learning-Fraud%20Detection-green)
 
